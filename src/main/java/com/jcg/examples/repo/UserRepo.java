@@ -13,11 +13,11 @@ import com.jcg.examples.entity.User;
 @RepositoryRestResource
 public interface UserRepo extends JpaRepository<User, Long>
 {
-		//http://localhost:8080/SpringDataRestExample/api/users/search/byName?name=angel
+		//http://localhost:8080/course/api/users/search/byName?name=angel
 		@RestResource(path="byName") 
 		public List<User> findByName(@Param("name") String name);
 		
-		//http://localhost:8080/SpringDataRestExample/api/users/search/findByEmail?email=angelricardo.uthh@gmail.com
+		//http://localhost:8080/course/api/users/search/findByEmail?email=angelricardo.uthh@gmail.com
 	    @Query("SELECT u FROM User u "
 	            +" WHERE u.email = :email")
 	    List<User> findByEmail(@Param("email")String email);		
